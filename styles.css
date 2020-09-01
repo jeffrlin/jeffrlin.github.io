@@ -1,8 +1,10 @@
 body {
 	background-color: rgb(217,217,217);
+	font-size: large; 
 }
 h1 {
 	color: rgb(77,140,173);
+ 	text-align: center;
 }
 p {
 	color: rgb(38,38,38);
@@ -10,4 +12,7 @@ p {
 .datestamp {
 	color:rgb(153,153,153);
 	font-size:x-small;
+}
+.navbar {
+ 	text-align: center;
 }
