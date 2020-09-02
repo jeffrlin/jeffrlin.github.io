@@ -23,9 +23,12 @@ p {
  	text-align: center;
 }
 .maintext {
-  max-width: 640px;
-  margin: auto;
-  padding: 1em;
-  line-height: 150%;
-  background-color: white;
+	max-width: 640px;
+	margin: auto;
+	padding: 1em;
+	line-height: 150%;
+	background-color: white;
+}
+.alert {
+	color: rgb(173,140,77);
 }
