@@ -45,6 +45,7 @@ img {
 	width: 33%;
  	text-align: center;
 	font-size:large;
+	line-height: 150%;
 }
 
 /* Clear floats after the columns */
