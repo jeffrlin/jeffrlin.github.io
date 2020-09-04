@@ -38,7 +38,15 @@ p {
 img {
 	max-width:640px;
 	height: auto;
+}
+.banner {
 	border:1px solid;
+}
+.headshot {
+	max-width:160px;
+	height:auto;
+	border:0px white;
+	float:right;
 }
 .column {
 	float: left;
