@@ -63,3 +63,7 @@ img {
 	display: table;
 	clear: both;
 }
+
+td {
+	vertical-align: baseline;
+}
