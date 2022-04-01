@@ -57,6 +57,7 @@ img {
 	line-height: 200%;
 }
 
+
 /* Clear floats after the columns */
 .row:after {
 	content: "";
