@@ -10,7 +10,7 @@ hr {
 }
 h1 {
 	color: rgb(77,140,173);
- 	text-align: center;
+ 	text-align: left;
  	font-size:48px;
 }
 h2 {
@@ -26,7 +26,7 @@ p {
 	font-size:x-small;
 }
 .maintext {
-	max-width: 640px;
+	max-width: 1024px;
 	margin: auto;
 	padding: 1em;
 	line-height: 150%;
@@ -42,12 +42,14 @@ img {
 }
 .banner {
 	border:1px solid;
+    max-width: 100%;
+    height: auto;
 }
 .headshot {
 	max-width:160px;
 	height:auto;
-	border:0px white;
 	float:right;
+	border:1px solid;
 }
 .column {
 	float: left;
