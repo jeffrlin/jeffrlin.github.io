@@ -1,72 +1,562 @@
+/* Modern Responsive Design for Jeffrey Lin's Website */
+
+/* CSS Variables for easy theming */
+:root {
+	--primary-color: rgb(77, 140, 173);
+	--text-color: rgb(38, 38, 38);
+	--light-gray: rgb(153, 153, 153);
+	--background: white;
+	--max-width: 1024px;
+	--header-height: 70px;
+}
+
+/* Reset and Base Styles */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 body {
+	background-color: var(--background);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	line-height: 1.6;
+	color: var(--text-color);
+	padding-top: var(--header-height);
+}
+
+/* Navigation Header */
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	background-color: white;
-	font-family: Helvetica, sans-serif;
-	font-size:large;
+	border-bottom: 1px solid #ddd;
+	height: var(--header-height);
+	z-index: 1000;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-hr {
-	border-top: 1px solid black;
-	margin-top: 1em;
-	margin-bottom: 1em;
+
+.nav-container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 1.5rem;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
-h1 {
-	color: rgb(77,140,173);
- 	text-align: left;
- 	font-size:48px;
+
+.site-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: var(--primary-color);
+	text-decoration: none;
 }
-h2 {
-	color: rgb(77,140,173);
- 	font-size:x-large;
- 	padding-top: 1em;
+
+.nav-menu {
+	display: flex;
+	list-style: none;
+	gap: 2rem;
+	align-items: center;
 }
-p {
-	color: rgb(38,38,38);
+
+.nav-menu a {
+	text-decoration: none;
+	color: var(--text-color);
+	font-weight: 500;
+	transition: color 0.3s ease;
+	padding: 0.5rem 0;
+	border-bottom: 2px solid transparent;
 }
-.datestamp {
-	color:rgb(153,153,153);
-	font-size:x-small;
+
+.nav-menu a:hover,
+.nav-menu a.active {
+	color: var(--primary-color);
+	border-bottom-color: var(--primary-color);
 }
-.maintext {
-	max-width: 1024px;
-	margin: auto;
-	padding: 1em;
-	line-height: 150%;
-	background-color: white;
-	font-size:large;
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+	display: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
 }
-.alert {
-	color: tomato;
+
+.menu-toggle span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: var(--text-color);
+	margin: 5px 0;
+	transition: 0.3s;
 }
-img {
-	max-width:640px;
-	height: auto;
+
+/* Main Content Container */
+.container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 2rem 1.5rem;
 }
+
+/* Banner Image */
 .banner {
-	border:1px solid;
-    max-width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
+	border: 1px solid #ddd;
+	margin-bottom: 2rem;
+	display: block;
 }
+
+.banner-small {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border: 1px solid #ddd;
+	margin-bottom: 2rem;
+}
+
+/* Typography */
+h1 {
+	color: var(--primary-color);
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	line-height: 1.2;
+}
+
+h2 {
+	color: var(--primary-color);
+	font-size: 1.75rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid #eee;
+}
+
+h2:first-of-type {
+	border-top: none;
+}
+
+h3 {
+	color: var(--text-color);
+	font-size: 1.25rem;
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+	color: var(--primary-color);
+	text-decoration: none;
+	transition: opacity 0.2s ease;
+}
+
+a:hover {
+	opacity: 0.7;
+	text-decoration: underline;
+}
+
+/* Headshot */
 .headshot {
-	max-width:160px;
-	height:auto;
-	float:right;
-	border:1px solid;
-}
-.column {
-	float: left;
-	width: 33%;
- 	text-align: center;
-	font-size:large;
-	line-height: 200%;
+	max-width: 180px;
+	height: auto;
+	float: right;
+	margin: 0 0 1rem 1.5rem;
+	border: 1px solid #ddd;
+	border-radius: 4px;
 }
 
-
-/* Clear floats after the columns */
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
+/* About Section */
+.about-section {
+	margin-bottom: 2rem;
 }
 
-td {
-	vertical-align: baseline;
+.contact-info {
+	margin-top: 1.5rem;
+	line-height: 1.8;
+}
+
+/* Highlights Section */
+.highlights {
+	background-color: #f8f9fa;
+	padding: 1.5rem;
+	border-radius: 8px;
+	margin: 2rem 0;
+}
+
+.highlights h2 {
+	margin-top: 0;
+	border-top: none;
+}
+
+.highlight-item {
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #ddd;
+}
+
+.highlight-item:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+/* Paper/Publication Cards */
+.paper-item {
+	background-color: #f8f9fa;
+	border-radius: 8px;
+	margin-bottom: 2rem;
+	padding: 1.5rem;
+	border-bottom: 1px solid #eee;
+}
+
+.paper-item:last-child {
+	border-bottom: none;
+}
+
+.paper-title {
+	font-weight: bold;
+	font-size: 1.1rem;
+	margin-bottom: 0.25rem;
+}
+
+.paper-authors {
+	margin-bottom: 0.25rem;
+}
+
+.paper-venue {
+	font-style: italic;
+	margin-bottom: 0.5rem;
+}
+
+.paper-links {
+	margin-top: 0.5rem;
+}
+
+.paper-links a:not(:last-child) {
+	margin-right: 0rem;
+}
+
+/* Episode Cards for Podcast */
+.episode-card {
+	background-color: #f8f9fa;
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+	border-radius: 8px;
+	border-left: 4px solid var(--primary-color);
+}
+
+.episode-number {
+	color: var(--light-gray);
+	font-size: 0.9rem;
+	font-weight: bold;
+	margin-bottom: 0.25rem;
+}
+
+.episode-title {
+	font-weight: bold;
+	font-size: 1.2rem;
+	margin-bottom: 0.5rem;
+}
+
+.episode-date {
+	color: var(--light-gray);
+	font-size: 0.9rem;
+	margin-bottom: 0.5rem;
+}
+
+.episode-description {
+	margin-top: 0.5rem;
+	line-height: 1.6;
+}
+
+/* Blog Post Preview */
+.post-preview {
+	margin-bottom: 2rem;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid #eee;
+}
+
+.post-preview:last-child {
+	border-bottom: none;
+}
+
+.post-date {
+	color: var(--light-gray);
+	font-size: 0.9rem;
+	margin-bottom: 0.25rem;
+}
+
+.post-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+}
+
+.post-excerpt {
+	margin-bottom: 0.75rem;
+}
+
+.read-more {
+	font-weight: 500;
+}
+
+/* Podcast/Resource Sections */
+.podcast-header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.podcast-logo {
+	max-width: 300px;
+	height: auto;
+	margin: 0 auto 1rem;
+	display: block;
+}
+
+.podcast-links {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+	margin: 1.5rem 0;
+}
+
+.podcast-links a {
+	padding: 0.75rem 1.5rem;
+	background-color: var(--primary-color);
+	color: white;
+	border-radius: 4px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.podcast-links a:hover {
+	opacity: 0.9;
+	text-decoration: none;
+}
+
+/* Resource Cards */
+.resource-card {
+	background-color: #f8f9fa;
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+	border-radius: 8px;
+}
+
+.resource-card h3 {
+	margin-top: 0;
+	color: var(--primary-color);
+}
+
+/* Datestamp */
+.datestamp {
+	color: var(--light-gray);
+	font-size: 0.85rem;
+	font-style: italic;
+}
+
+/* Disclaimer */
+.disclaimer {
+	background-color: #f8f9fa;
+	padding: 1rem;
+	border-left: 4px solid var(--light-gray);
+	margin: 2rem 0;
+	font-size: 0.9rem;
+	color: var(--light-gray);
+}
+
+/* Footer */
+.site-footer {
+	border-top: 1px solid #ddd;
+	padding: 2rem 0;
+	margin-top: 3rem;
+	color: var(--light-gray);
+	font-size: 0.9rem;
+}
+
+/* Back to Top Button */
+.back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	background-color: var(--primary-color);
+	color: white;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	font-size: 1.5rem;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+	transition: opacity 0.3s ease;
+}
+
+.back-to-top:hover {
+	opacity: 0.8;
+}
+
+.back-to-top.visible {
+	display: flex;
+}
+
+/* Utility Classes */
+hr {
+	border: none;
+	border-top: 1px solid #ddd;
+	margin: 2rem 0;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.mt-2 {
+	margin-top: 2rem;
+}
+
+.mb-2 {
+	margin-bottom: 2rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+	body {
+		font-size: 16px;
+	}
+
+	.site-header {
+		height: 60px;
+	}
+
+	:root {
+		--header-height: 60px;
+	}
+
+	.nav-container {
+		padding: 0 1rem;
+	}
+
+	.site-title {
+		font-size: 1.25rem;
+	}
+
+	.menu-toggle {
+		display: block;
+	}
+
+	.nav-menu {
+		position: fixed;
+		top: 60px;
+		left: 0;
+		right: 0;
+		background-color: white;
+		flex-direction: column;
+		gap: 0;
+		padding: 1rem 0;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		display: none;
+	}
+
+	.nav-menu.active {
+		display: flex;
+	}
+
+	.nav-menu li {
+		width: 100%;
+		text-align: center;
+	}
+
+	.nav-menu a {
+		display: block;
+		padding: 1rem;
+		border-bottom: none;
+	}
+
+	.container {
+		padding: 1.5rem 1rem;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	.headshot {
+		max-width: 120px;
+		margin: 0 0 1rem 1rem;
+	}
+
+	.banner-small {
+		height: 150px;
+	}
+
+	.podcast-links {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.podcast-links a {
+		text-align: center;
+	}
+
+	.back-to-top {
+		bottom: 1rem;
+		right: 1rem;
+		width: 45px;
+		height: 45px;
+		font-size: 1.25rem;
+	}
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 1.75rem;
+	}
+
+	h2 {
+		font-size: 1.25rem;
+	}
+
+	.headshot {
+		float: none;
+		display: block;
+		margin: 0 auto 1rem;
+	}
+
+	.episode-card,
+	.resource-card {
+		padding: 1rem;
+	}
+}
+
+/* Print Styles */
+@media print {
+	.site-header,
+	.back-to-top,
+	.menu-toggle {
+		display: none;
+	}
+
+	body {
+		padding-top: 0;
+	}
+
+	a {
+		text-decoration: underline;
+	}
 }
